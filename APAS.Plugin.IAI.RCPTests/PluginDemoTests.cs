@@ -9,7 +9,7 @@ namespace APAS.Plugin.IAI.RCP.Tests
         [TestMethod()]
         public void ControlTest()
         {
-            var plugin = new PluginDemo(null);
+            var plugin = new PluginDemo(null, "电夹爪");
             var win = new Window
             {
                 Content = plugin.UserView,

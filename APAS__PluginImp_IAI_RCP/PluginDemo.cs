@@ -22,6 +22,7 @@ namespace APAS.Plugin.IAI.RCP
 
         private readonly object _locker = new object();
 
+        private const string PATTEN_CONTROL_PARAM_RUN_LN = @"^\d*$";
         private const string PATTEN_CONTROL_PARAM_CLAMP = @"^CLAMP$";
         private const string PATTEN_CONTROL_PARAM_RELEASE = @"^RELEASE$"; 
         private const string PATTEN_CONTROL_PARAM_HOME= @"^HOME$";
@@ -47,7 +48,7 @@ namespace APAS.Plugin.IAI.RCP
 
         #region Constructors
 
-        public PluginDemo(ISystemService apasService) : base(Assembly.GetExecutingAssembly(), apasService)
+        public PluginDemo(ISystemService apasService, string caption) : base(Assembly.GetExecutingAssembly(), apasService, caption)
         {
             #region Configuration Reading
 
@@ -73,8 +74,6 @@ namespace APAS.Plugin.IAI.RCP
         #endregion
 
         #region Properties
-
-        public override string Caption => "RCP电夹";
 
         public override string ShortCaption => "RCP";
 
@@ -112,6 +111,17 @@ namespace APAS.Plugin.IAI.RCP
                     return;
                 throw new Exception($"夹手释放错误，错误代码{errCode}");
 
+            }
+            if(Regex.IsMatch(param, PATTEN_CONTROL_PARAM_RUN_LN))
+            {
+                if (int.TryParse(param, out var ln))
+                {
+                    if (cIAI_PCON_Axis.SetDirectPositionStartSignal(_portNum, _axisNum, ln, out var errCode) != 0)
+                        return;
+                    throw new Exception($"夹手夹紧错误，错误代码{errCode}");
+                }
+                else
+                    throw new Exception($"无法将参数 {param} 转换为位置行数。");
             }
             else if (Regex.IsMatch(param, PATTEN_CONTROL_PARAM_CLAMP)) // "OFF"
             {
@@ -172,7 +182,7 @@ namespace APAS.Plugin.IAI.RCP
         {
             try
             {
-                base.IsInitialized= false;
+                IsInitialized = false;
                 IsEnabled = false;
 
                 if (cIAI_PCON_Axis.ComPortOpen(_portNum, out var errCode) != 1)
@@ -183,13 +193,13 @@ namespace APAS.Plugin.IAI.RCP
                     if (cIAI_PCON_Axis.SetAlarmClearSignal(_portNum, _axisNum, out errCode) == 0)
                         throw new Exception($"清除报警错误，错误代码{errCode}");
 
-                    if(cIAI_PCON_Axis.SetServoOnSwitch(_portNum, _axisNum, 1, out errCode) != 1)
+                    if (cIAI_PCON_Axis.SetServoOnSwitch(_portNum, _axisNum, 1, out errCode) != 1)
                         throw new Exception($"伺服使能错误，错误代码{errCode}");
                 }
                 else
                     throw new Exception($"设置Modbus开关错误，错误代码{errCode}");
 
-                base.IsInitialized = true;
+                IsInitialized = true;
                 IsEnabled = true;
 
                 return true;
@@ -198,7 +208,6 @@ namespace APAS.Plugin.IAI.RCP
             {
                 throw;
             }
-
         }
 
         public override void StartBackgroundTask()

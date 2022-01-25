@@ -40,14 +40,14 @@
     <Reference Include="APAS.CoreLib, Version=1.1.0.7, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\APAS.CoreLib.1.1.0.7\lib\net48\APAS.CoreLib.dll</HintPath>
     </Reference>
-    <Reference Include="APAS.Interface, Version=1.1.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\APAS.Interface.1.1.0.1\lib\net461\APAS.Interface.dll</HintPath>
+    <Reference Include="APAS.Interface, Version=1.1.1.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\APAS.Interface.1.1.1.2\lib\net461\APAS.Interface.dll</HintPath>
     </Reference>
-    <Reference Include="APAS.Plugin.Sdk, Version=1.1.0.39, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\APAS.Plugin.Sdk.1.1.0.39\lib\net48\APAS.Plugin.Sdk.dll</HintPath>
+    <Reference Include="APAS.Plugin.Sdk, Version=1.1.4.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\APAS.Plugin.Sdk.1.1.4.43\lib\net48\APAS.Plugin.Sdk.dll</HintPath>
     </Reference>
-    <Reference Include="APAS.ServiceContract, Version=1.1.0.46, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\APAS.ServiceContract.1.1.0.46\lib\net48\APAS.ServiceContract.dll</HintPath>
+    <Reference Include="APAS.ServiceContract, Version=1.1.1.47, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\APAS.ServiceContract.1.1.1.47\lib\net48\APAS.ServiceContract.dll</HintPath>
     </Reference>
     <Reference Include="CommonMark, Version=0.1.0.0, Culture=neutral, PublicKeyToken=001ef8810438905d, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonMark.NET.0.15.1\lib\net45\CommonMark.dll</HintPath>

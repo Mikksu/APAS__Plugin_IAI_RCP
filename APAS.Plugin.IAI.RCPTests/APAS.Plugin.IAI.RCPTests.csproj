@@ -39,14 +39,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="APAS.Interface, Version=1.1.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\APAS.Interface.1.1.0.1\lib\net461\APAS.Interface.dll</HintPath>
+    <Reference Include="APAS.Interface, Version=1.1.1.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\APAS.Interface.1.1.1.2\lib\net461\APAS.Interface.dll</HintPath>
     </Reference>
-    <Reference Include="APAS.Plugin.Sdk, Version=1.1.0.39, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\APAS.Plugin.Sdk.1.1.0.39\lib\net48\APAS.Plugin.Sdk.dll</HintPath>
+    <Reference Include="APAS.Plugin.Sdk, Version=1.1.4.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\APAS.Plugin.Sdk.1.1.4.43\lib\net48\APAS.Plugin.Sdk.dll</HintPath>
     </Reference>
-    <Reference Include="APAS.ServiceContract, Version=1.1.0.46, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\APAS.ServiceContract.1.1.0.46\lib\net48\APAS.ServiceContract.dll</HintPath>
+    <Reference Include="APAS.ServiceContract, Version=1.1.1.47, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\APAS.ServiceContract.1.1.1.47\lib\net48\APAS.ServiceContract.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.2.2.7\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
